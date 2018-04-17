@@ -237,6 +237,6 @@ TEST_SUBMODULE(stl, m) {
     m.def("stl_pass_by_pointer", [](std::vector<int>* v) { return *v; }, "v"_a=nullptr);
 
     // #1258: pybind11/stl.h converts string to vector<string>
-    // m.def("func_with_string_or_vector_string_arg_overload", [](std::vector<std::string>) { return 0; });
-    // m.def("func_with_string_or_vector_string_arg_overload", [](std::string) { return 1; });
+    m.def("func_with_string_or_vector_string_arg_overload", [](std::vector<std::string>) { return 0; });
+    m.def("func_with_string_or_vector_string_arg_overload", [](std::string) { return 1; });
 }
